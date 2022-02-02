@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# WC Chakra/Storybook WF Test
+
+The goal here is to test a few things before getting into the main app build:
+- ake sure Chakra and Storybook play nicely
+- Chakra with a heavily customized design to see how efficient modding is
+- Test Storybook more precisely with a more finely-tuned design
+- Test Storybook with API mocking
+
+---
+## Made using Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
