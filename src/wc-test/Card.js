@@ -4,16 +4,18 @@ import { CardMenu } from "./CardMenu";
 
 import { Box, Text, Heading, Image } from "@chakra-ui/react";
 
-export const Card = () => {
+export const Card = ({ card, ...props }) => {
   return (
     <Box
-      borderRadius="30px"
       backgroundColor="white"
-      border="solid 2px black"
       height="max-content"
       minWidth="340px"
       maxWidth="400px"
       display="block"
+      borderStyle="solid"
+      borderWidth="2px 9px 10px 2px"
+      borderRadius="30px"
+      borderColor="black"
     >
       <Box
         display="flex"
@@ -22,14 +24,14 @@ export const Card = () => {
         m="25px 25px 0px"
         minHeight="35px"
       >
-        <Text display="flex">xxxx 7358</Text>
+        <Text display="flex">xxxx {card.last4}</Text>
         <Box display="flex" justifyContent="space-around">
           <CardMenu />
         </Box>
       </Box>
       <Box ml="25px" mr="25px">
         <Heading as="h1" size="lg" minHeight="60px" mb="25px" mt="5px">
-          Personal Freedom
+          {card.name}
         </Heading>
       </Box>
       <Box
@@ -40,11 +42,18 @@ export const Card = () => {
         alignItems="center"
         justifyContent="space-between"
         minHeight={35}
-        mt={10}
+        mt="10px"
       >
-        <Text display="flex" alignItems="center">
-          Aint Been used yet
-        </Text>
+        {card.locations.length > 0 ? (
+          <Text display="flex" alignItems="center">
+            Used in {card.locations.length}{" "}
+            {card.locations.length === 1 ? "location" : "locations"}
+          </Text>
+        ) : (
+          <Text display="flex" alignItems="center">
+            Ain't Been Used Yet.
+          </Text>
+        )}
         <Image
           height="35px"
           width="75px"
